@@ -7,7 +7,8 @@ const textPozpatku = (text) => {
 
 const items = document.querySelectorAll('li');
 items.forEach((li) => {
-	if (li.textContent && li.textContent.toLowerCase() === textPozpatku(li.textContent.toLowerCase())) {
+	const text = li.textContent.toLowerCase().replaceAll(' ', '');
+	if (text && text === textPozpatku(text)) {
 		li.classList.add('palindrom');
 	}
 })
